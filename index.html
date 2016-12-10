@@ -1,4 +1,5 @@
-<html>
+<!doctype html>
+<html lang="en-us">
 <head>
 	<script>
 		function validateInput()
@@ -36,6 +37,14 @@
 		}
 	</script>
 	<style>
+	.city {
+	    float: left;
+   	    margin: 10px;
+   	    padding: 10px;
+   	    max-width: 300px;
+   	    height: 300px;
+  	    border: 1px solid black;
+	}	
 	.content {
 	    color: white;
 	    float: left;
@@ -51,13 +60,14 @@
 	</style>
 </head>
 <body background="http://wallpapercave.com/wp/RWdAVG7.jpg">
-	
+	<div class="city">
 	<form method="post">
-		<font color="white">Enter you name:</font> <input id="firstname"/> 
-		<input type="button" id="submit" value="Submit>>" onClick="javascript:validateInput()">
+		<p><font color="white">Enter your name:</font> <input id="firstname"/> 
+		<input type="button" id="submit" value="Submit>>" onClick="javascript:validateInput()"></p>
 		<div id="content" class="content"></div> 
 	
 	</form>
+	</div>
 </body>
 
 </html>
