@@ -1,9 +1,63 @@
-<!doctype html>
 <html>
-      <head>
-            <title>Nishit Tirumala's Page</title>
-      </head>
-      <body>
-            <p>I am 18yrs old, and currently persuing engineering in UB.</p>
-      </body>
+<head>
+	<script>
+		function validateInput()
+		{
+			if(document.getElementById("firstname").value=="")
+			{
+				alert("Please enter your Name");
+				document.getElementById("firstname").focus();
+			}
+			document.getElementById("submit").setAttribute("disabled","disabled");
+			document.getElementById("firstname").readOnly = true;
+			writeName();
+		}
+		function clearInput()
+		{
+			document.getElementById("firstname").value = "";
+			document.getElementById("firstname").focus();
+			document.getElementById("submit").removeAttribute("disabled");
+			document.getElementById("firstname").readOnly = false;
+		}
+		function writeName()
+		{
+			var firstName=document.getElementById("firstname").value;			
+			var nameSize= firstName.length;
+			var i = 0;
+			var interval = setInterval(function(){
+							if(i == nameSize - 1) {
+								clearInput();
+								clearInterval(interval);								
+							}
+							document.getElementById("content").innerHTML = document.getElementById("content").innerHTML + firstName[i];
+							i = i + 1;
+						}, 1000);
+				
+		}
+	</script>
+	<style>
+	.content {
+	    color: white;
+	    float: left;
+	    font-family: "Edwardian Script ITC";
+	    font-size: 200px;
+	    font-weight: bold;
+	    letter-spacing: 2px;
+	    margin-top: 100px;
+	    padding-bottom: 10px;
+	    text-align: center;
+	    width: 100%;
+	}
+	</style>
+</head>
+<body background="C:\Users\nishi\Desktop\p1.jpg">
+	
+	<form method="post">
+		<font color="white">Enter you name:</font> <input id="firstname"/> 
+		<input type="button" id="submit" value="Submit>>" onClick="javascript:validateInput()">
+		<div id="content" class="content"></div> 
+	
+	</form>
+</body>
+
 </html>
